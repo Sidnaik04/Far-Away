@@ -1,0 +1,38 @@
+1. create and configure project
+
+2. component Logo()
+    -> Heading
+
+3. component Form()
+    -> form -> onSubmit => handleSubmit
+    -> select (1,20)=> quantity
+    -> input => text
+    -> Button => to Add new item
+    -> newItem => create new item
+    -> useState => description -> for description of item
+	    => quantity -> for item quantity
+	    => items -> for new items
+    -> handleAddItem => for adding new item in array (push is not used due to mutability) , used  spread operator instead.
+
+    -> we want items in PackingList() to display in UI, but we can't pass as Form() and PackingList() are both siblings component. Hence, up lift the state to the most common Component to both. Here it is parent component App().
+
+4. component PackingList()
+    -> map on items
+    -> onDeleteItems => props
+
+5. component Item()
+    -> prop item
+    -> onDeleteItems => onClick
+    -> checkbox for each item
+
+6. Component Stats()
+    -> footer
+
+7. component App()
+    -> Lifting of state -> items[]
+    -> handleAddItem => to add the item in array
+    -> passing the props => Form(),PackingList()
+    -> handleDeleteItem => to delete the item from array
+    -> pass prop onDeleteItems => PackingList(), Item()
+    -> handleToggleItem => to update the item packed or not
+    -> pass prop onToggleItem => PackingList(), Item()
